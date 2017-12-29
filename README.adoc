@@ -1,0 +1,1 @@
+Test verifying/illustrating that Byte Buddy works as the bytecode provider without Javassist on the classpath

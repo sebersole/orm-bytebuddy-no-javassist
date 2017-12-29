@@ -1,0 +1,25 @@
+group 'org.hibernate.sebersole'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        name "jboss-snapshots"
+        url "http://snapshots.jboss.org/maven2/"
+    }
+}
+
+
+configurations.all*.exclude group: 'org.javassist', module: 'javassist'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'org.hibernate:hibernate-core:5.3.0-SNAPSHOT'
+    testCompile 'org.hibernate:hibernate-testing:5.3.0-SNAPSHOT'
+    testRuntime 'net.bytebuddy:byte-buddy:1.6.14'
+    testRuntime 'com.h2database:h2:1.4.196'
+}
